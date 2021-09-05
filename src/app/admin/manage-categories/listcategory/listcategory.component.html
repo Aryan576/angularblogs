@@ -1,0 +1,32 @@
+<table *ngIf="listcategory" datatable class=" row-border hover" >
+
+    <!--Table head-->
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Category</th>
+            <th>Edit</th>
+            <th>Delete</th>
+            
+        </tr>
+    </thead>
+    
+
+   
+    <tbody>
+        <tr class="table-info" *ngFor="let m of listcategory">
+            <th scope="row">{{m.id}}</th>
+            <td>{{m.category}}</td>
+            <td><mdb-icon fas icon="user-edit" [routerLink]="['/editcategory',m.id]"></mdb-icon></td>
+            <td><button type="button"  (click)="delete(m.id)"><mdb-icon fas icon="user-times" ></mdb-icon></button></td>
+           
+
+         </tr>   
+         
+    </tbody>
+  
+
+
+</table>
+
+

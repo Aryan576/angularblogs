@@ -1,0 +1,43 @@
+<table *ngIf="listcategory" datatable class=" row-border hover" >
+
+    <!--Table head-->
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Title</th>
+            <th>Date</th>
+            <th>Feature</th>
+            <th>Active</th>
+            <td>Image</td>
+            <th>Description</th>
+            <th>Update</th>
+            <th>Delete</th>
+            
+        </tr>
+    </thead>
+    
+
+   
+    <tbody>
+        <tr class="table-info" *ngFor="let m of listcategory">
+            <th scope="row">{{m.id}}</th>
+            <td>{{m.title}}</td>
+            <td>{{m.date|date:'mediumDate'}}</td>
+            <th>{{m.isfeatured}}</th>
+            <th>{{m.isactive}}</th>
+            <td><img [src]="['http://localhost:5151/uploads/' + m.image]"  width="100px" height="100px"></td>
+            <td>{{m.description}}</td>
+            <td><mdb-icon fas icon="user-edit" [routerLink]="['/admin/manage-blogs/editblog',m.id]"></mdb-icon></td>
+            <td><button type="button"  (click)="delete(m.id)"><mdb-icon fas icon="user-times" ></mdb-icon></button></td>
+           
+
+         </tr>   
+         
+    </tbody>
+  
+
+
+</table>
+
+
+

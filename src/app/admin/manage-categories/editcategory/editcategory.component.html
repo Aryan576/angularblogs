@@ -1,0 +1,45 @@
+<div class="container ft">
+    <button type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
+           (click)="frame.show()" mdbWavesEffect>Category
+   </button>
+   
+   <div mdbModal #frame="mdbModal" class="modal fade top" id="frameModalTop" tabindex="-1" role="dialog"
+        aria-labelledby="myModalLabel" aria-hidden="true">
+     <div class="modal-dialog cascading-modal modal-avatar modal-sm" role="document">
+       <!--Content-->
+       <div class="modal-content">
+   
+         <!--Header-->
+         <div class="modal-header">
+           <img src="./assets/Aryan.JPG" alt="avatar"
+                class="rounded-circle img-responsive">
+         </div>
+         <!--Body-->
+         <form [formGroup]="validatingForm" *ngIf="validatingForm" (ngSubmit)="submit()">     
+              <div class="modal-body mb-1">
+   
+           <h5 class="mt-1 mb-2 text-center">Aryan  Shah</h5>
+   
+           <div class="md-form ml-0 mr-0">
+             <input type="password" type="text" id="form29" class="form-control form-control-sm ml-0" mdbInput mdbValidate formControlName="category" >
+             <label for="form29" class="ml-0">Enter Category</label>
+             
+            
+           </div>
+   
+   
+           <div class="text-center mt-4">
+             <button type="submit" mdbBtn color="cyan" rounded="true" class="mt-1 waves-light" mdbWavesEffect>Submit
+               <mdb-icon fas icon="sign-in-alt" class="ml-1"></mdb-icon>
+             </button>
+           </div>
+         </div>
+       </form>
+   
+       </div>
+   
+   
+       <!--/.Content-->
+     </div>
+   </div>
+   </div>

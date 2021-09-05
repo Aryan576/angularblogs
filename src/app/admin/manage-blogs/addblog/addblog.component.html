@@ -1,0 +1,83 @@
+<div class="container ft">
+<button type="button" mdbBtn color="default" rounded="true" data-toggle="modal" data-target="#basicExample"
+        (click)="frame.show()" mdbWavesEffect>AddPost
+</button>
+<form [formGroup]=" validatingForm" (ngSubmit)="submit()">
+<div mdbModal #frame="mdbModal" class="modal fade left" id="frameModalTop" tabindex="-1" role="dialog"
+     aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header text-center">
+        <h4 class="modal-title w-100 font-weight-bold">Add Post</h4>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close" (click)="frame.hide()">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body mx-3">
+        <div class="md-form mb-5">
+          <mdb-icon fas icon="user" class="prefix grey-text"></mdb-icon>
+          <input type="text" id="form34" class="form-control" mdbInput mdbValidate formControlName="title" >
+          <label for="form34">Title </label>
+          
+        </div>
+
+        <select class="form-control" id="exampleFormControlSelect1" formControlName="c_id">
+            <option >Select Category</option>
+            <option value="{{m.id}}" *ngFor="let m of category">{{m.category}}</option>
+    
+    
+        </select>
+
+        <div class="form-group form-row">
+            <label class="col-md-3">IsFeatured: </label>
+            <div class="col-md-9">
+                <input type="radio" formControlName="isfeatured" value="true"/>Yes
+                <input type="radio" formControlName="isfeatured" value="false"/>No
+        
+                
+
+            </div>
+           
+         
+        </div>
+
+        <div class="form-group form-row">
+            <label class="col-md-3">Is Active: </label>
+            <div class="col-md-9">
+                <input type="radio" formControlName="isactive" value="true" />Yes
+                <input type="radio" formControlName="isactive" value="false" />No
+
+            </div>
+
+            <div class="form-group form-row">
+              <label class="col-md-3">Upload Image</label>
+              <div class="col-md-9">
+                <input type="file" id="file" (change)="handlefileInput($event.target.files)" required>
+              </div>
+              <div *ngIf="imagepath">
+                <img [src]="['http://localhost:5151/uploads/'+ imagepath]" width="100px" height="100px" required>
+              </div>
+            </div>
+        
+         
+        </div>
+
+        <div class="md-form">
+          <mdb-icon fas icon="pencil-alt" class="prefix grey-text"></mdb-icon>
+          <textarea type="text" id="form8" class="md-textarea form-control" rows="1" mdbInput mdbValidate formControlName="description" > </textarea>
+          <label for="form8">Description</label>
+         
+        </div>
+
+      </div>
+      <div class="modal-footer d-flex justify-content-center">
+        <input type="submit" mdbBtn color="unique" class="waves-light" mdbWavesEffect  value="submit">
+          
+        
+      </div>
+    </div>
+  </div>
+</div>
+</form>
+</div>
+

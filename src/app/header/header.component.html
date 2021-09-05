@@ -1,0 +1,77 @@
+<!--Navbar-->
+<mdb-navbar SideClass="navbar navbar-expand-lg navbar-dark unique-color" [containerInside]="false">
+
+    <!-- Navbar brand -->
+    <mdb-navbar-brand><a class="navbar-brand" href="#">Logo</a></mdb-navbar-brand>
+  
+    <!-- Collapsible content -->
+    <links>
+  
+      <!-- Links -->
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item active">
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['./']">Home<span class="sr-only">(current)</span></a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['./service']">Service</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['./contactus']">Contact US </a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['./aboutus']">About US </a>
+          </li>
+  
+          <li class="nav-item" *ngIf="islogin">
+            <a class="nav-link waves-light" mdbWavesEffect [routerLink]="['./admin']">Admin DashBoard </a>
+          </li>
+          <li class="nav-item" *ngIf="islogin">
+            <a class="nav-link waves-light" mdbWavesEffect (click)="logout()">Logout </a>
+          </li>
+
+          <li class="nav-item" >
+            <a class="nav-link">
+              <div class="btn-group" mdbDropdown>
+                <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+                <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+                  <a class="dropdown-item" [routerLink]="['./featured']">Featured</a>
+                  <a class="dropdown-item" [routerLink]="['./active']">Active</a>
+            
+                 
+                </div>
+              </div>
+            </a>
+          </li>
+      </ul>
+
+
+  
+      <ul class="navbar-nav ml-auto nav-flex-icons">
+        <li class="nav-item">
+          <a class="nav-link">
+            <mdb-icon fab icon="twitter"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link">
+            <mdb-icon fab icon="google-plus"></mdb-icon>
+          </a>
+        </li>
+        <li class="nav-item" *ngIf="!islogin">
+          <a class="nav-link">
+            <div class="btn-group" mdbDropdown>
+              <mdb-icon fas icon="user" mdbDropdownToggle></mdb-icon>
+              <div class="dropdown-menu dropdown-menu-right dropdown-primary">
+                <a class="dropdown-item" [routerLink]="['./signup']">Sign UP</a>
+                <a class="dropdown-item" [routerLink]="['./login']">Login</a>
+                
+               
+              </div>
+            </div>
+          </a>
+        </li>
+      </ul>
+    </links>
+
+  
+  </mdb-navbar>

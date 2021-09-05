@@ -1,0 +1,19 @@
+<div class="container ft">
+<div class="row">
+
+    <div class="col-4 py-4">
+      <div id="list-example" class="list-group">
+        <a class="list-group-item list-group-item-action active" [routerLink]="['./admin-dashboard']">Dashboard</a>
+        <a class="list-group-item list-group-item-action" [routerLink]="['./manage-blogs']">Blogs</a>
+        <a class="list-group-item list-group-item-action" [routerLink]="['./manage-categories']">Categories</a>
+        <a class="list-group-item list-group-item-action" [routerLink]="['./manage-pages']">Pages</a>
+        
+      </div>
+    </div>
+    <div class="col-8 py-4">
+      
+        <router-outlet></router-outlet>
+      
+    </div>
+  </div>
+</div>
